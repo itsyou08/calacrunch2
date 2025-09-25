@@ -121,6 +121,30 @@
             margin-bottom: 30px;
         }
 
+        .cookie-image {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .cookie-image:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
@@ -143,20 +167,7 @@
             text-align: center;
             position: relative;
         }
-
-        .cookie-image {
-            width: 100%;
-            max-width: 450px;
-            height: auto;
-            border-radius: 20px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .cookie-image:hover {
-            transform: scale(1.05);
-        }
-
+    
         /* Section Styles */
         section {
             padding: 80px 0;
@@ -426,6 +437,20 @@
                 font-size: 0.875rem;
             }
             
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+
+            /* Add these two rules right after the hero-content rule */
+            .hero-image {
+                order: -1; /* This moves the image to the top */
+            }
+
+            .hero-text {
+                order: 1; /* This keeps the text below the image */
+            }
             .hero-text p {
             font-size: 0.875rem;
             }
@@ -483,7 +508,7 @@
 
             .cookie-image {
                 max-width: 300px;
-                height: 300px;
+                height: auto;
             }
 
             .about-content {
@@ -562,10 +587,6 @@
                 font-size: 2rem;
             }
 
-            .cookie-image {
-                max-width: 250px;
-                height: 250px;
-            }
 
             .contact-form {
                 padding: 30px 20px;
